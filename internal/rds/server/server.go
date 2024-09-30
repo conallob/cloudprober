@@ -63,6 +63,14 @@ func (s *Server) initProviders(c *configpb.ServerConf) error {
 	for _, pc := range c.GetProvider() {
 		id := pc.GetId()
 		switch pc.Config.(type) {
+		case *configpb.Provider_ConsulConfig:
+			if id == "" {
+				id = consul.DefaultProviderID
+			}
+			s.l.Infof("rds.server: adding Consul provider with id: %s", id)
+			if p, err = consul.New(pc.GetConsulConfig(), s.l); err != nil {
+				return err
+			}
 		case *configpb.Provider_FileConfig:
 			if id == "" {
 				id = file.DefaultProviderID
