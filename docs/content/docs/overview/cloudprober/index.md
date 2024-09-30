@@ -64,6 +64,7 @@ in your systems.
   - _GCP_ instances, forwarding rules, and pub/sub messages.
   - _[File]({{< ref "/docs/how-to/targets.md" >}}#file-based-targets)_ based
     targets.
+  - _Consul , discovered targets.
 
 * Deployment friendly:
 

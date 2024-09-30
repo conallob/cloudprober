@@ -58,6 +58,7 @@ message RDSTargets {
   // Examples:
   // For GCE instances in projectA: "gcp://gce_instances/<projectA>"
   // Kubernetes Pods : "k8s://pods"
+  // Consul Instance : "consul://service/myservice"
   optional string resource_path = 2;
 
   // Filters to filter resources by. Example:
@@ -133,6 +134,8 @@ filtering by name and labels.
   - [GCE Instances](https://github.com/cloudprober/cloudprober/blob/e4a0321d38d75fb4655d85632b52039fa7279d1b/rds/gcp/gce_instances.go#L44)
   - [Forwarding Rules](https://github.com/cloudprober/cloudprober/blob/b6e268e0bd11072f5d86b704306bc1100a8a5da8/rds/gcp/forwarding_rules.go#L44)
   - [Pub/Sub Messages](https://github.com/cloudprober/cloudprober/blob/e4a0321d38d75fb4655d85632b52039fa7279d1b/rds/gcp/pubsub.go#L34)
+- Filters supported by Consul:
+  - TODO(conallob): Add Consul filter examples here
 
 ## Running RDS Server
 
